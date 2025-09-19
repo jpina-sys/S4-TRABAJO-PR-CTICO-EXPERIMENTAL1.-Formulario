@@ -1,0 +1,321 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.form-container {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+    padding: 50px;
+    border-radius: 25px;
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.5),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(15px);
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    width: 100%;
+    max-width: 500px;
+    transform: translateY(0);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3);
+    border-radius: 25px;
+    z-index: -1;
+    animation: gradientShift 6s ease infinite;
+}
+
+.form-container:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+.form-title {
+    text-align: center;
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 4s ease infinite;
+    font-size: 2.5em;
+    margin-bottom: 35px;
+    font-weight: 800;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.form-group {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 10px;
+    background: linear-gradient(45deg, #667eea, #764ba2, #f093fb);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 5s ease infinite;
+    font-weight: 700;
+    font-size: 1.2em;
+    transition: all 0.3s ease;
+}
+
+.form-input, .form-select {
+    width: 100%;
+    padding: 18px 25px;
+    border: 3px solid transparent;
+    border-radius: 15px;
+    font-size: 16px;
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+    transition: all 0.4s ease;
+    color: #2d3748;
+    font-weight: 500;
+    position: relative;
+}
+
+.form-input:focus, .form-select:focus {
+    outline: none;
+    background: linear-gradient(135deg, #ffffff, #f0f8ff);
+    border: 3px solid;
+    border-image: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1) 1;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+        0 10px 25px rgba(0, 0, 0, 0.1),
+        0 0 0 4px rgba(102, 126, 234, 0.1);
+}
+
+.form-input:hover, .form-select:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #ffffff, #f7fafc);
+    border-color: rgba(102, 126, 234, 0.3);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4, #45b7d1);
+    background-size: 200% 200%;
+    animation: gradientShift 6s ease infinite;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 20px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.6s;
+}
+
+.submit-btn:hover::before {
+    left: 100%;
+}
+
+.submit-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.1);
+}
+
+.submit-btn:active {
+    transform: translateY(-2px) scale(1.02);
+}
+
+.reset-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, #feca57, #ff9ff3, #54a0ff);
+    background-size: 200% 200%;
+    animation: gradientShift 7s ease infinite;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    margin-top: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.reset-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.1);
+}
+
+.error-message {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 8px;
+    padding: 8px 15px;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.error-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.success-message {
+    background: linear-gradient(135deg, #00d2d3, #54a0ff, #5f27cd);
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease infinite;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+    font-size: 16px;
+    display: none;
+    box-shadow: 0 8px 25px rgba(0, 210, 211, 0.3);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.form-input.error {
+    border: 3px solid #ff6b6b !important;
+    background: linear-gradient(135deg, #ffe0e0, #ffb3b3) !important;
+    animation: shake 0.5s ease-in-out;
+}
+
+.form-input.success {
+    border: 3px solid #00d2d3 !important;
+    background: linear-gradient(135deg, #e0ffff, #b3f0ff) !important;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    75% { transform: translateX(8px); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.form-input:focus {
+    animation: pulse 0.5s ease-in-out;
+}
+
+/* Efectos adicionales para elementos seleccionados */
+.form-select option {
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+    color: #2d3748;
+    padding: 10px;
+}
+
+.form-select option:hover {
+    background: linear-gradient(135deg, #4ecdc4, #45b7d1);
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .form-container {
+        padding: 35px 25px;
+        margin: 15px;
+        border-radius: 20px;
+    }
+    
+    .form-title {
+        font-size: 2em;
+    }
+    
+    .form-input, .form-select {
+        padding: 15px 20px;
+        font-size: 14px;
+    }
+    
+    .submit-btn {
+        padding: 18px;
+        font-size: 18px;
+    }
+    
+    .reset-btn {
+        padding: 15px;
+        font-size: 16px;
+    }
+}
+
+/* Animaciones adicionales para hacer más llamativo */
+.form-group:hover .form-label {
+    transform: translateX(5px);
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.form-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+    pointer-events: none;
+}
+
+.form-container:hover::after {
+    transform: translateX(100%);
+}
