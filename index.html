@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1 class="form-title">🌟 Registro de Usuario 🌟</h1>
+        
+        <div class="success-message" id="successMessage">
+            🎉 ¡Registro exitoso! Bienvenido a nuestra plataforma. 🎉
+        </div>
+
+        <form id="registroForm">
+            <div class="form-group">
+                <label for="nombre" class="form-label">👤 Nombre y Apellido</label>
+                <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Ingresa tu nombre completo">
+                <div class="error-message" id="errorNombre"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="correo" class="form-label">📧 Correo Electrónico</label>
+                <input type="email" id="correo" name="correo" class="form-input" placeholder="ejemplo@correo.com">
+                <div class="error-message" id="errorCorreo"></div>
+            </div>
+
+            <div class="form-group">
+                <label for="contrasena" class="form-label">🔒 Contraseña</label>
+                <input type="password" id="contrasena" name="contrasena" class="form-input" placeholder="Mínimo 8 caracteres">
+                <div class="error-message" id="errorContrasena"></div>
+            </div>
+
+            <button type="submit" class="submit-btn">🚀 Registrarse 🚀</button>
+            <button type="reset" class="reset-btn">🔄 Limpiar Formulario</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
